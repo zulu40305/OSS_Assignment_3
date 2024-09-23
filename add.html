@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friend Management</title>
+  <link rel="stylesheet" href="./my.css">
+</head>
+<body>
+  <h2>Add Friend List</h2>
+  <form>
+    <div class="input-element">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" placeholder="HongGildong">
+      <p class="warning" id="warning-name">The name's length must be between 1 ~ 30.</p>
+    </div>
+
+    <div class="input-element">
+      <label for="phonenumber">Phone Number</label>
+      <input type="text" name="phonenumber" id="phonenumber" placeholder="xxx-xxxx-xxxx">
+      <p class="warning" id="warning-phonenumber">Invalid form of Phone Number.</p>
+    </div>
+
+    <div class="input-element">
+      <label for="birthday">Birthday</label>
+      <input type="text" name="birthday" id="birthday" placeholder="00/00">
+      <p class="warning" id="warning-birthday">Invalid form of birthday.</p>
+    </div>
+
+    <div class="input-element">
+      <label for="relation">Relation</label>
+      <input type="text" name="relation" id="relation" placeholder="coworker">
+      <p class="warning" id="warning-relation">Relation input cannot be the blank.</p>
+    </div>
+
+    <div class="input-element">
+      <label for="nationality">Nationality</label>
+      <input type="text" name="nationality" id="nationality" placeholder="Korea">
+      <p class="warning" id="warning-nationality">Nationality input cannot be the blank.</p>
+    </div>
+
+    <div class="input-element">
+      <label for="city">City</label>
+      <input type="text" name="city" id="city" placeholder="Seoul">
+      <p class="warning" id="warning-city">City input cannot be the blank.</p>
+    </div>
+    
+    <button class="btn-submit" type="button" onclick="onclickSubmit()">Submit</button>
+    <button class="btn-cancel" type="button" onclick="onclickCancel()">Cancel</button>
+  </form>
+</body>
+<script>
+  const nameInput = document.getElementById('name');
+  const nameWarning = document.getElementById('warning-name');
+
+  const phonenumberInput = document.getElementById('phonenumber');
+  const phonenumberWarning = document.getElementById('warning-phonenumber');
+
+  const birthdayInput = document.getElementById('birthday');
+  const birthdayWarning = document.getElementById('warning-birthday');
+
+  const relationInput = document.getElementById('relation');
+  const relationWarning = document.getElementById('warning-relation');
+
+  const nationalityInput = document.getElementById('nationality');
+  const nationalityWarning = document.getElementById('warning-nationality');
+
+  const cityInput = document.getElementById('city');
+  const cityWarning = document.getElementById('warning-city');
+
+  function lengthValidation(value, maximum) {
+    if (value.trim().length <= 0) return false;
+    else if (value.trim().length > maximum) return false;
+    else return true;
+  }
+
+  function phoneValidation(value) {
+    phone = /^\d{3}-\d{4}-\d{4}$/;
+    return phone.test(value);
+  }
+
+  function dateValidation(value) {
+    date = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])$/;
+    return date.test(value);
+  }
+
+  function validationCheck() {
+    let name = true, 
+    phone = true, 
+    birthday = true, 
+    relation = true, 
+    nationality = true, 
+    city = true;
+
+    if (!lengthValidation(nameInput.value, 30)) {
+      nameWarning.style.display = 'block';
+      name = false;
+    } else {
+      nameWarning.style.display = 'none';
+      name = true;
+    }
+
+    if (!phoneValidation(phonenumberInput.value)) {
+      phonenumberWarning.style.display = 'block';
+      phone = false;
+    } else {
+      phonenumberWarning.style.display = 'none';
+      phone = true;
+    }
+
+    if (!dateValidation(birthdayInput.value, 5)) {
+      birthdayWarning.style.display = 'block';
+      birthday = false;
+    } else {
+      birthdayWarning.style.display = 'none';
+      birthday = true;
+    }
+
+    if (!lengthValidation(relationInput.value, 999)) {
+      relationWarning.style.display = 'block';
+      relation = false;
+    } else {
+      relationWarning.style.display = 'none';
+      relation = true;
+    }
+
+    if (!lengthValidation(nationalityInput.value, 999)) {
+      nationalityWarning.style.display = 'block';
+      nationality = false;
+    } else {
+      nationalityWarning.style.display = 'none';
+      nationality = true;
+    }
+
+    if (!lengthValidation(cityInput.value, 999)) {
+      cityWarning.style.display = 'block';
+      city = false;
+    } else {
+      cityWarning.style.display = 'none';
+      city = true;
+    }
+
+    if (name && phone && birthday && relation && nationality && city) return true;
+    else return false;
+  }
+
+  function onclickSubmit() {
+    if (validationCheck()) alert("Item Added!");
+    else alert("Invalid Error!");
+  }
+
+  function onclickCancel() {
+    window.location.href='./index.html';
+  }
+</script>
+</html>

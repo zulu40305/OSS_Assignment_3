@@ -1,0 +1,167 @@
+[class*="btn-"] {
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-add {
+  float: right;
+  background-color: royalblue;
+  color: white;
+  padding: 8px 17.5px 8px 17.5px;
+}
+
+/* Global CSS above */
+
+.list-element-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: left;
+}
+
+.list-element-title .row-item {
+  font-weight: bold;
+}
+
+.list-box {
+  padding: 0px;
+}
+
+.list-element a {
+  text-decoration: none;
+}
+
+.list-element:first-child {
+  border-top: 1px solid grey;
+}
+
+.list-element {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: left;
+  border-bottom: 1px solid grey;
+}
+
+.list-element:nth-child(odd) {
+  background-color: rgb(219, 219, 219);
+}
+
+.list-element:nth-child(even) {
+  background-color: whitesmoke;
+}
+
+.row-item {
+  display: inline-block;
+  width: 20%;
+  padding: 10px;
+}
+
+.btn-edit {
+  width: 70px;
+  height: 25px;
+  background-color: royalblue;
+  color: white;
+}
+
+.btn-delete {
+  width: 70px;
+  height: 25px;
+  background-color: crimson;
+  color: white;
+  padding: 5px 10px 5px 10px;
+}
+
+/* index.html above */
+
+.input-element {
+  padding: 10px 5px 10px 5px;
+}
+
+.input-element label {
+  display: block;
+  color: royalblue;
+  padding: 2.5px 0px;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.input-element input {
+  padding: 2.5px 10px;
+  border: 1.5px solid black;
+  border-radius: 5px;
+}
+
+.warning {
+  display: none;
+  font-size: 10pt;
+  color: tomato;
+}
+
+.btn-submit {
+  border: 1.5px royalblue solid;
+  background-color: royalblue;
+  color: white;
+  padding: 8px 17.5px 8px 17.5px;
+}
+
+.btn-cancel {
+  border: 1.5px royalblue solid;
+  background-color: white;
+  color: royalblue;
+  padding: 8px 17.5px 8px 17.5px;
+}
+
+/* add.html above */
+
+.button-box {
+  display: block;
+  text-align: center;
+  margin: 15px 0px;
+}
+
+.btn-edit-view {
+  border: 1.5px royalblue solid;
+  background-color: white;
+  color: royalblue;
+  padding: 8px 17.5px 8px 17.5px;
+}
+
+.btn-delete-view {
+  border: 1.5px crimson solid;
+  background-color: white;
+  color: crimson;
+  padding: 8px 17.5px 8px 17.5px;
+}
+
+.btn-list-view {
+  border: 1.5px royalblue solid;
+  background-color: royalblue;
+  color: white;
+  padding: 8px 17.5px 8px 17.5px;
+}
+
+/* view.html above */
+
+@media (max-width: 650px) {
+  .row-item {
+    font-size: 8pt;
+  }
+
+  .btn-edit {
+    width: 50px;
+    height: 20px;
+    background-color: royalblue;
+    color: white;
+    font-size: 8pt;
+  }
+  
+  .btn-delete {
+    width: 50px;
+    height: 20px;
+    background-color: crimson;
+    color: white;
+    padding: 2.5px 5px 2.5px 5px;
+    font-size: 8pt;
+  }
+}
